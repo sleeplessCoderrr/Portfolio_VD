@@ -1,22 +1,36 @@
-import { Button, Flex, Heading, Text } from "@chakra-ui/react";
+import { Flex, Heading, Text, Button, useColorMode, useColorModeValue } from '@chakra-ui/react';
+import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 
-function Header(){
+function Header() {
+    const { colorMode, toggleColorMode } = useColorMode();
+    const textColor = useColorModeValue("gray.800", "whiteAlpha.900");
+    const hoverColor = useColorModeValue("teal.600", "teal.300");
+
+    const logoSrc = useColorModeValue("../../public/logo_light.png", "../../public/logo_dark.png");
+
     return (
         <Flex direction={"row"} justify={"center"} gap={24} marginTop={8}>
             <Flex gap={8} direction={"row"} justify={"center"} align={"center"}>
-                <Heading>Vincent Devin</Heading>
-                <Text _hover={{color: "teal.500"}}>Works</Text>
-                <Text _hover={{color: "teal.500"}}>Wallpaper</Text>
-                <Text _hover={{color: "teal.500"}}>Source</Text>
+                <Flex justify={"center"} align={"center"}>
+                    <img
+                        src={logoSrc}
+                        alt="VD"
+                        style={{ width: '40px', height: '40px' }}
+                    />
+                    <Heading color={textColor}>Vincent Devin</Heading>
+                </Flex>
+                <Text color={textColor} _hover={{ color: hoverColor }}>Works</Text>
+                <Text color={textColor} _hover={{ color: hoverColor }}>Wallpaper</Text>
+                <Text color={textColor} _hover={{ color: hoverColor }}>Source</Text>
             </Flex>
 
             <Flex>
-                <Button>
-                    <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-onkibi" aria-hidden="true"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2"></path><path d="M12 21v2"></path><path d="M4.22 4.22l1.42 1.42"></path><path d="M18.36 18.36l1.42 1.42"></path><path d="M1 12h2"></path><path d="M21 12h2"></path><path d="M4.22 19.78l1.42-1.42"></path><path d="M18.36 5.64l1.42-1.42"></path></g></svg>
+                <Button onClick={toggleColorMode}>
+                    {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
                 </Button>
             </Flex>
         </Flex>
     );
 }
 
-export default Header; 
+export default Header;
