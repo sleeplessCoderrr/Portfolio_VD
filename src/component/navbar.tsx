@@ -13,24 +13,29 @@ function Navbar() {
             justify={"center"}
             gap={24}
             marginTop={8}>
+
             <Flex
                 gap={8}
                 direction={"row"}
                 justify={"right"}
                 align={"center"}>
+
                 <Flex
                     justify={"center"}
                     align={"center"}
-                    gap={2}>
+                    gap={1}>
                     <img
                         src={logoSrc}
                         alt="VD"
-                        style={{ width: '40px', height: '40px' }}
+                        style={{ width: '30px', height: '30px' }}
                     />
-                    <Heading fontFamily={"mono"}>
+                    <Heading
+                        fontFamily={"mono"}
+                        fontSize={20}>
                         Vincent Devin
                     </Heading>
                 </Flex>
+
                 <Text
                     _hover={{ color: 'teal.500' }}>
                     Wallpaper
@@ -43,6 +48,7 @@ function Navbar() {
                     _hover={{ color: 'teal.500' }}>
                     Source
                 </Text>
+
             </Flex>
 
             <Flex justify={"right"}>
@@ -50,6 +56,7 @@ function Navbar() {
                     <Icon/>
                 </Button>
             </Flex>
+
         </Flex>
     );
 }
