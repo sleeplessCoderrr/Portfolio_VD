@@ -1,8 +1,8 @@
-import Header from "./layout/Header"
+import Header from './layout/Header.tsx'
 
 function App() {
   return (
-    <Header />
+     <Header />
   )
 }
 
