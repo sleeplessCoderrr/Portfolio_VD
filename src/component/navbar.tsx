@@ -1,7 +1,7 @@
 import { Flex, Heading, Text, Button, useColorMode, useColorModeValue } from '@chakra-ui/react';
 import { MoonIcon, SunIcon} from "@chakra-ui/icons";
 
-function Header() {
+function Navbar() {
     const { toggleColorMode }  = useColorMode();
     const logoSrc = useColorModeValue('../../public/logo_light.png', '../../public/logo_dark.png');
     const Icon = useColorModeValue(MoonIcon, SunIcon);
@@ -54,4 +54,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default Navbar;

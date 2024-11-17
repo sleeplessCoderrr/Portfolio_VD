@@ -1,8 +1,13 @@
-import Header from './layout/Header.tsx'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/home.tsx';
 
 function App() {
   return (
-     <Header />
+      <Router>
+          <Routes>
+              <Route path={"/"} element={<Home/>}/>
+          </Routes>
+      </Router>
   )
 }
 
