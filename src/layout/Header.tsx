@@ -1,12 +1,10 @@
-import { Flex, Heading, Text, Button } from '@chakra-ui/react'
-import {useState} from "react";
+import { Flex, Heading, Text, Button, useColorMode, useColorModeValue } from '@chakra-ui/react';
+import { MoonIcon, SunIcon} from "@chakra-ui/icons";
 
 function Header() {
-    const [darkMode, setDarkMode] = useState(false);
-
-    const toggleDarkMode = () => {
-        setDarkMode((prev) => !prev);
-    }
+    const { toggleColorMode }  = useColorMode();
+    const logoSrc = useColorModeValue('../../public/logo_light.png', '../../public/logo_dark.png');
+    const Icon = useColorModeValue(MoonIcon, SunIcon);
 
     return (
         <Flex
@@ -25,12 +23,11 @@ function Header() {
                     align={"center"}
                     gap={2}>
                     <img
-                        src={'../../public/logo_light.png'}
+                        src={logoSrc}
                         alt="VD"
                         style={{ width: '40px', height: '40px' }}
                     />
-                    <Heading
-                        fontFamily={"mono"}>
+                    <Heading fontFamily={"mono"}>
                         Vincent Devin
                     </Heading>
                 </Flex>
@@ -48,14 +45,12 @@ function Header() {
                 </Text>
             </Flex>
 
-            <Flex
-                justify={"right"}>
-                <Button onClick={() => {toggleDarkMode()}}>
-                    Switch to {darkMode ? "Dark" : "Light"} Mode
+            <Flex justify={"right"}>
+                <Button onClick={toggleColorMode}>
+                    <Icon/>
                 </Button>
             </Flex>
         </Flex>
-
     );
 }
 
