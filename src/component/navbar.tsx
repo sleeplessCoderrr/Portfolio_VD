@@ -27,24 +27,27 @@ function Navbar() {
                     <img
                         src={logoSrc}
                         alt="VD"
-                        style={{ width: '30px', height: '30px' }}
+                        style={{ width: '40px', height: '40px' }}
                     />
                     <Heading
                         fontFamily={"mono"}
-                        fontSize={20}>
+                        fontSize={24}>
                         Vincent Devin
                     </Heading>
                 </Flex>
 
                 <Text
+                    fontSize={18}
                     _hover={{ color: 'teal.500' }}>
                     Wallpaper
                 </Text>
                 <Text
+                    fontSize={18}
                     _hover={{ color: 'teal.500' }}>
                     Works
                 </Text>
                 <Text
+                    fontSize={18}
                     _hover={{ color: 'teal.500' }}>
                     Source
                 </Text>

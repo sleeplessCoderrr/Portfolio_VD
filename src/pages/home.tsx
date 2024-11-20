@@ -1,6 +1,6 @@
 import Navbar from "@/component/navbar.tsx";
 import Footer from "@/component/footer.tsx";
-import {Text, Flex, Heading, Box} from "@chakra-ui/react";
+import {Text, Flex, Heading} from "@chakra-ui/react";
 
 function Home(){
     return(
@@ -16,24 +16,14 @@ function Home(){
                 alignItems="center"
                 gap={12}>
 
-                <Box
-                    bg="orange.100"
-                    borderRadius={"md"}
-                    px={4} h={8}>
-                    <Text
-                        fontSize={20}
-                        color="gray.800">
-                        Hello, I'm a frontend developer based in Jakarta!
-                    </Text>
-                </Box>
-
                 <Flex
                     direction={"column"}>
                     <Heading
                         fontSize={32}>
                         Vincentius Devin Agung Oktara
                     </Heading>
-                    <Text>
+                    <Text
+                        fontSize={18}>
                         Digital Craftsman ( Developer / Designer )
                     </Text>
                 </Flex>
