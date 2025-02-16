@@ -1,5 +1,5 @@
-import Navbar from "@/component/navbar/navbar.tsx";
-import Footer from "@/component/landing/footer.tsx";
+import Navbar from "@/components/navbar/navbar";
+import Footer from "@/components/landing/footer";
 import {Text, Flex, Heading} from "@chakra-ui/react";
 
 function Home(){
