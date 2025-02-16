@@ -1,11 +1,7 @@
-import { Flex, Heading, Text, Button, useColorMode, useColorModeValue } from '@chakra-ui/react';
-import { MoonIcon, SunIcon} from "@chakra-ui/icons";
+import { ColorModeButton } from '@/components/ui/color-mode';
+import { Flex, Heading, Text } from '@chakra-ui/react';
 
 function Navbar() {
-    const { toggleColorMode }  = useColorMode();
-    const logoSrc = useColorModeValue('../../public/logo_light.png', '../../public/logo_dark.png');
-    const Icon = useColorModeValue(MoonIcon, SunIcon);
-
     return (
         <Flex
             position={"static"}
@@ -20,44 +16,25 @@ function Navbar() {
                 justify={"right"}
                 align={"center"}>
 
-                <Flex
-                    justify={"center"}
-                    align={"center"}
-                    gap={1}>
-                    <img
-                        src={logoSrc}
-                        alt="VD"
-                        style={{ width: '40px', height: '40px' }}
-                    />
-                    <Heading
-                        fontFamily={"mono"}
-                        fontSize={24}>
+                <Flex justify={"center"} align={"center"} gap={1}>
+                    <Heading fontFamily={"mono"} fontSize={24}>
                         Vincent Devin
                     </Heading>
                 </Flex>
 
-                <Text
-                    fontSize={18}
-                    _hover={{ color: 'teal.500' }}>
+                <Text fontSize={18} _hover={{ color: 'teal.500' }}>
                     Wallpaper
                 </Text>
-                <Text
-                    fontSize={18}
-                    _hover={{ color: 'teal.500' }}>
+                <Text fontSize={18} _hover={{ color: 'teal.500' }}>
                     Works
                 </Text>
-                <Text
-                    fontSize={18}
-                    _hover={{ color: 'teal.500' }}>
+                <Text fontSize={18} _hover={{ color: 'teal.500' }}>
                     Source
                 </Text>
-
             </Flex>
 
             <Flex justify={"right"}>
-                <Button onClick={toggleColorMode}>
-                    <Icon/>
-                </Button>
+                <ColorModeButton />
             </Flex>
 
         </Flex>

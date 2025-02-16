@@ -1,21 +1,21 @@
 import * as THREE from 'three';
 import { useEffect } from 'react';
 
-export default function ThreeBackground(): JSX.Element | null {
+export default function Threescene(): JSX.Element | null {
     useEffect(() => {
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(
-            75, 
+            75,
             window.innerWidth / window.innerHeight,
-            0.1, 
-            1000 
+            0.1,
+            1000
         );
         camera.position.z = 5;
 
         const renderer = new THREE.WebGLRenderer({ antialias: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(window.devicePixelRatio); 
-        document.body.style.margin = '0'; 
+        renderer.setPixelRatio(window.devicePixelRatio);
+        document.body.style.margin = '0';
         document.body.style.overflow = 'hidden';
         document.body.appendChild(renderer.domElement);
 
@@ -45,5 +45,5 @@ export default function ThreeBackground(): JSX.Element | null {
         };
     }, []);
 
-    return null; 
+    return null;
 }
